@@ -1,12 +1,13 @@
-import express from "express";
+import express from 'express';
 const app = express();
-export default app;
 
 app.use(express.json());
 
 app.get('/api/hello', (req, res) => {
-    res.json({ message: 'Hello'})
-})
+    res.json({ message: 'Hello' });
+});
 
 const port = 3000;
-app.listen(port);
+const server = app.listen(port);
+
+export { app, server };
